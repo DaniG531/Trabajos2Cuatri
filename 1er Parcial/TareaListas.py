@@ -31,9 +31,9 @@ def Imprimir():
     Z = 1
     for i in List:
         print("- - - - - - - - - - - - ")
-        print(f"Persona #", Z ,": ")
-        for ii in vars(i):
-            print(ii, ": ", getattr(i,ii))
+        print(f"Persona # {Z} : ")
+        for Y in vars(i):
+            print(Y, ": ", getattr(i,Y))
         print("- - - - - - - - - - - - ")
         Z += 1
 
@@ -55,6 +55,7 @@ def Menu():
             print("- - - - - - - - - - - - ")
             answer = int(input())
             if answer == 2:
+                print("")
                 A = False
     if menuopcion == 2:
         if len(List) <= 1:
