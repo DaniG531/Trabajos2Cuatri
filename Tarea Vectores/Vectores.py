@@ -43,8 +43,10 @@ while 1:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: sys.exit()
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_a:
+            if event.key == pygame.K_s:
                 screen.fill(black)
+            if event.key == pygame.K_a:
+                
                 Coords = RandCoords()
                 CoordsA = Coords
                 VectorA = RandVector()
