@@ -72,10 +72,8 @@ while Juego:
             list[i] = GuessWord[i]
             
     if GuessWord == Palabra:
-        print("")
         for i in range(len(list)):
             print(list[i], end= " ")
-        print("")
         print("")
         print("=================")
         print("  Y O U   W O N  ")
@@ -89,7 +87,6 @@ while Juego:
     else:
         contador -= 1
     
-    print("")
     for i in range(len(list)):
         print(list[i], end= " ")
     print("")
