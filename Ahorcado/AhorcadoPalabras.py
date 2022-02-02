@@ -29,7 +29,6 @@ if dificultad == 1:
     Palabra = "paracaidas"
     contador = 30
     for i in range(len(Palabra)):
-        print("_", end= " ") 
         list.append("_")
     list[0] = "*"
     list[3] = "*"
@@ -39,7 +38,6 @@ if dificultad == 2:
     Palabra = "helicoptero"
     contador = 20
     for i in range(len(Palabra)):
-        print("_", end= " ") 
         list.append("_")
     list[2] = "*"
     list[5] = "*"
@@ -48,14 +46,15 @@ if dificultad == 3:
     Palabra = "supercalifrastilisticoespiralidoso"
     contador = 10
     for i in range(len(Palabra)):
-        print("_", end= " ") 
         list.append("_")
     list[0] = "*"
 
 
 print("")
 print("")
-print(list)
+for i in range(len(list)):
+    print(list[i], end= " ")
+print("")
 
 Juego = True
 while Juego:
@@ -72,10 +71,10 @@ while Juego:
         if GuessWord[i] == Palabra[i]:
             list[i] = GuessWord[i]
             
-
-    
-
     if GuessWord == Palabra:
+        print("")
+        for i in range(len(list)):
+            print(list[i], end= " ")
         print("")
         print("")
         print("=================")
@@ -91,9 +90,10 @@ while Juego:
         contador -= 1
     
     print("")
+    for i in range(len(list)):
+        print(list[i], end= " ")
     print("")
-    print(list)
-    
+
     if contador == 0:
         print("")
         print("=================")
