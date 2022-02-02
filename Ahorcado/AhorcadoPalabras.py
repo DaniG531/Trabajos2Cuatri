@@ -1,6 +1,5 @@
 list = []
 
-
 print("")
 print("     ¡========* ")
 print("    //        !") 
@@ -55,6 +54,7 @@ print("")
 for i in range(len(list)):
     print(list[i], end= " ")
 print("")
+
 
 Juego = True
 while Juego:
