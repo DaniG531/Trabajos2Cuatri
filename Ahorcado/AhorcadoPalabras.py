@@ -11,16 +11,16 @@ print("    ||")
 print("    ||")
 print("_-=====================-_")
 print("||                     ||")
-print("+=========-=========+")
-print("Selecciona Dificultad")
-print("+=========-=========+")
+print("+===========-===========+")
+print(" Selecciona  Dificultad")
+print("+===========-===========+")
 print("    1. - Facil")
 print("    2. - Media")
 print("    3. - Dificil")
 print("")
 
 
-dificultad = int(input(" -"))
+dificultad = int(input(" .-"))
 while dificultad >=4 or dificultad <=0:
     print("Elige una opción valida.")
     dificultad = int(input(" -"))
@@ -73,9 +73,7 @@ while Juego:
             list[i] = GuessWord[i]
             
 
-    print("")
-    print("")
-    print(list)
+    
 
     if GuessWord == Palabra:
         print("")
@@ -91,7 +89,11 @@ while Juego:
                 list[i] = Palabra[i]
     else:
         contador -= 1
-        
+    
+    print("")
+    print("")
+    print(list)
+    
     if contador == 0:
         print("")
         print("=================")
