@@ -1,4 +1,4 @@
-Palabra = "pajaro"
+Palabra = "uwu"
 list = []
 
 
