@@ -1,4 +1,4 @@
-
+import copy
 MatrizA = [["0" for i in range(7)] for j in range(8)]
 MatrizB = [["0" for i in range(5)] for j in range(5)]
 MatrizC = [["0" for i in range(8)] for j in range(4)]
@@ -25,7 +25,7 @@ MatrizInfo = (Matriz, Pos, NewPos)
 
 def Puertas(Matriz, NewPos):
     if Matriz[NewPos[0]][NewPos[1]] == "A":
-        Matriz = MatrizA
+        Matriz = copy.deepcopy(MatrizA)
         Pos = [3,3]
         destination = [3,3]
         Matriz[3][3] = "P"
@@ -34,7 +34,7 @@ def Puertas(Matriz, NewPos):
             print(True)
         return NewInfo
     if Matriz[NewPos[0]][NewPos[1]] == "B":
-        Matriz = MatrizB
+        Matriz = copy.deepcopy(MatrizB)
         Pos = [2,3]
         destination = [2,3]
         Matriz[2][3] = "P"
@@ -43,7 +43,7 @@ def Puertas(Matriz, NewPos):
             print(True)
         return NewInfo
     if Matriz[NewPos[0]][NewPos[1]] == "C":
-        Matriz = MatrizC
+        Matriz = copy.deepcopy(MatrizC)
         Pos = [1,1]
         destination = [1,1]
         Matriz[1][1] = "P"

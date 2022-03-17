@@ -17,7 +17,7 @@ class Player:
 
 class Room:
     def __init__(self, x, y):
-        self.Cells = [["0" for i in range(x)] for j in range(y)]
+        self.Celdas = [["0" for i in range(x)] for j in range(y)]
 
 
 class World:
@@ -30,8 +30,11 @@ class World:
 
 Mundo = World()
 
-for i in range(len(Mundo.Rooms[0])):
-    for j in range(len(Mundo.Rooms)):
-        print(Mundo.Rooms[j][i], end = ", ")
+print(type(Mundo))
+print(type(Mundo.Rooms[0].Celdas))
+
+for i in range(len(Mundo.Rooms[0].Celdas[0])):
+    for j in range(len(Mundo.Rooms[0].Celdas[0])):
+        print(Mundo.Rooms[0].Celdas[j][i], end = ", ")
     print()
 

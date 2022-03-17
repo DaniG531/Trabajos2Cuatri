@@ -1,5 +1,13 @@
-list = ["El", " ", "Carro", " ", "Viaja", " ", "Rapido"]
+A=5
+B=6
 
+def Add(A,B):
+    A=0
+    B=0
 
-for i in list:
-    print(i, end= "")
+    return A+B
+
+Restult=Add(A,B)
+print(Restult)
+print(A)
+print(B)
