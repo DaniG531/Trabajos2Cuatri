@@ -88,11 +88,25 @@ class InputSystem:
         if key == "D":
             return self.D_Pressed
 
-    #def GetKeyDown(self):
+    def GetKeyDown(self, key):
+        if key == "W":
+            return self.W_Down
+        if key == "A":
+            return self.A_Down
+        if key == "S":
+            return self.S_Down
+        if key == "D":
+            return self.D_Down
 
-
-    def GetKeyUp(self):
-
+    def GetKeyUp(self, key):
+        if key == "W":
+            return self.W_Up
+        if key == "A":
+            return self.A_Up
+        if key == "S":
+            return self.S_Up
+        if key == "D":
+            return self.D_Up
 
 #        if event.type == pygame.KEYUP:
 #            if event.key == pygame.K_a:
