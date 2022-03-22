@@ -22,10 +22,21 @@ playerSpriteWidth = playerSprite.get_width()
 playerSpriteHeight /= 2
 playerSpriteWidth /= 2
 
+FPS = 60
+dt = pygame.time.get_ticks()
 
 def GetTime(): 
-    totalTicks = (pygame.time.get_ticks())/1000
-    print(str(f"{totalTicks} segundos desde que inició el programa."))
+    totalSecs = (pygame.time.get_ticks())/1000
+    #print(str(f"{totalSecs} segundos desde que inició el programa."))
+    return totalSecs
+
+def GetDeltaTime():
+    deltime = (dt - (GetTime()))/1000
+    return deltime
+    
+def Update():
+    print(str(f"Tiempo desde el inicio = {GetTime()} segundos. \nTiempo entre cada frame = {GetDeltaTime()} segundos."))
+
 
 
 class InputSystem:
@@ -127,14 +138,29 @@ class InputSystem:
 
 move = InputSystem()
 
-GetTime()
+
 
 playerSprite = pygame. transform.scale(playerSprite, (playerSpriteWidth, playerSpriteHeight))
+
+
 while isRunning:
-
+    for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if event.type == pygame.QUIT: sys.exit()
+                #if event.key == pygame.K_b:
+                    #GetTime()
      
+    
+    GetTime()
+    Tiempo = GetTime()
+    #print(Tiempo )
+    print()
+    
+    TiempoDelta = GetDeltaTime()
+    #print(TiempoDelta)
+    print()
 
-
+    Update()
 
     window.fill((130, 20, 210))
     window.blit(playerSprite, (playerPosX, playerPosY))
