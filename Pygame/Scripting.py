@@ -31,7 +31,7 @@ def GetTime():
     return totalSecs
 
 def GetDeltaTime():
-    deltime = (dt - (GetTime()))/1000
+    deltime = ((GetTime()+dt - GetTime())/1000)/60
     return deltime
     
 def Update():
