@@ -1,13 +1,7 @@
-A=5
-B=6
+import pygame
 
-def Add(A,B):
-    A=0
-    B=0
+def GetTime(): 
+    totalTicks = (pygame.time.get_ticks())/1000
+    print(str(f"{totalTicks} segundos desde que inició el programa."))
 
-    return A+B
-
-Restult=Add(A,B)
-print(Restult)
-print(A)
-print(B)
+GetTime()

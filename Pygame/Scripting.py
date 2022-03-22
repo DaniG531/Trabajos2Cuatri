@@ -22,6 +22,12 @@ playerSpriteWidth = playerSprite.get_width()
 playerSpriteHeight /= 2
 playerSpriteWidth /= 2
 
+
+def GetTime(): 
+    totalTicks = (pygame.time.get_ticks())/1000
+    print(str(f"{totalTicks} segundos desde que inició el programa."))
+
+
 class InputSystem:
     def _init_(self):
         self.W_Pressed = False
@@ -121,10 +127,12 @@ class InputSystem:
 
 move = InputSystem()
 
+GetTime()
+
 playerSprite = pygame. transform.scale(playerSprite, (playerSpriteWidth, playerSpriteHeight))
 while isRunning:
 
-                
+     
 
 
 
