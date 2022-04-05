@@ -8,6 +8,7 @@ class App:
 
     def run(self):
         while self.m_isRunning:
+            print('\n\n')
             self.m_mundo.printRoom()
 
             m_command = str.lower(input("Movimiento (w/a/s/d)= "))
@@ -17,4 +18,34 @@ class App:
 
             elif m_command == "use door":
                 self.m_mundo.usedoor()
+
+            elif m_command == "open door":
+                self.m_mundo.opendoor()
+
+            elif m_command == "use":
+                self.m_mundo.useitem()
+
+            elif m_command == "throw":
+                self.m_mundo.throwitem()
+
+            elif m_command == "drop":
+                self.m_mundo.dropitem()
+
+            elif m_command == "pick":
+                self.m_mundo.pickitem()
+
+            elif m_command == "inv":
+                self.m_mundo.lookinv()
             
+            elif m_command == "close game":
+                self.m_isRunning = False
+            else:
+                print("\n")
+
+            if self.m_mundo.m_jugador.m_health <=0:
+                print("\n")
+                print("=====================")
+                print("  G A M E   O V E R")
+                print("=====================")
+                print("\n")
+                break
