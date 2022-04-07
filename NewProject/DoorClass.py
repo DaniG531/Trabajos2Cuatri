@@ -3,6 +3,3 @@ class Door:
         self.m_position = lugarpuerta
         self.m_destination = destino
         self.m_isOpen = open
-
-        
-

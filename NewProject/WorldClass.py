@@ -76,11 +76,10 @@ class World:
 
 
         ]
+
         for i in range(len(cuartos)):
             self.m_rooms.append(Room(cuartos[i], puertas[i], items[i]))
-        
-        
-
+          
     def moveplayer(self, direction):
         self.m_jugador.Move(self.m_rooms, direction)
 
@@ -105,29 +104,26 @@ class World:
     def throwitem(self):
         self.m_jugador.Throw()
 
-    
+    def printStuff(self, j, i):
+        if self.m_jugador.m_position.m_x == j and self.m_jugador.m_position.m_y == i:
+            print("P", end = ", ")
+            return
 
-    #def pick(self, ):
-        #self.m_jugador.PickItem(self.m_rooms[self.m_jugador.m_position.m_room]self.m_items)
+        for puerta in self.m_rooms[self.m_jugador.m_position.m_room].m_puertas:
+            if puerta.m_position.m_x == j and puerta.m_position.m_y == i:
+                print("D", end = ", ")
+                return
+                             
+        for item in self.m_rooms[self.m_jugador.m_position.m_room].m_items:
+            if item.m_position.m_x == j and item.m_position.m_y == i:
+                print("X", end = ", ")
+                return
+
+        else: #el codigo entra si no se entró a los if's de arriba
+            print(self.m_rooms[self.m_jugador.m_position.m_room].m_celdas[i][j], end = ", ")
 
     def printRoom(self):
         for i in range(len(self.m_rooms[self.m_jugador.m_position.m_room].m_celdas)):
             for j in range(len(self.m_rooms[self.m_jugador.m_position.m_room].m_celdas[i])):
-                if self.m_jugador.m_position.m_x == j and self.m_jugador.m_position.m_y == i:
-                    print("P", end = ", ")
-                    continue
-
-                for puerta in self.m_rooms[self.m_jugador.m_position.m_room].m_puertas:
-                    if puerta.m_position.m_x == j and puerta.m_position.m_y == i:
-                        print("D", end = ", ")
-                        break
-                
-                for item in self.m_rooms[self.m_jugador.m_position.m_room].m_items:
-                    if item.m_position.m_x == j and item.m_position.m_y == i:
-                        print("X", end = ", ")
-                        break
-
-                else: #el codigo entra si no se entró a los if's de arriba
-                    print(self.m_rooms[self.m_jugador.m_position.m_room].m_celdas[i][j], end = ", ")
+                self.printStuff(j, i)    
             print()
-  

@@ -1,10 +1,6 @@
 from ItemClass import Item
+from PositionClass import Position
 
-class Key:
-    def __init__(self, pos = ()):
-        self.m_position = pos
-        super(Item)
-
-
-        
-
+class Key(Item):
+    def __init__(self, pos = Position()):
+        super().__init__(pos)

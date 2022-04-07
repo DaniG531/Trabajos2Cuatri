@@ -21,8 +21,7 @@ class Player:
         print("Magic = ", self.m_magic)
         print("Keys = ", str(len(self.m_inventory["Key"])))
         print("Life Potions = ", str(len(self.m_inventory["Potion"])))
-        print("Mana Potions = ", str(len(self.m_inventory["Mana"])))
-        
+        print("Mana Potions = ", str(len(self.m_inventory["Mana"])))     
 
     def UseDoor(self, doors):
         for door in doors:
@@ -68,7 +67,6 @@ class Player:
             print("Health = ", self.m_health)
             print("Life Potions = ", str(len(self.m_inventory["Potion"])))
         
-
         if chosenitem == "mana":
             if len(self.m_inventory["Mana"]) <= 0:
                 print("No tienes objetos de esa clase.\n")
@@ -79,7 +77,6 @@ class Player:
                 self.m_health = 50
             print("Magic = ", self.m_magic)
             print("Mana Potions = ", str(len(self.m_inventory["Mana"])))
-
 
     def Drop(self, room):
         self.LookInv()
@@ -106,7 +103,6 @@ class Player:
             room.append(Mana(Position(self.m_position.m_x, self.m_position.m_y, self.m_position.m_room)))
             print("Mana Potions = ", str(len(self.m_inventory["Mana"])))
 
-
     def Throw(self):
         self.LookInv()
         chosenitem = str.lower(input("Que objeto tirar? (Key/Potion/Mana) = "))
@@ -129,7 +125,6 @@ class Player:
             self.m_inventory["Mana"].pop(0)
             print("Mana Potions = ", str(len(self.m_inventory["Mana"])))
         
-
     def Move(self, Rooms, direction):
         NewPos = Position(self.m_position.m_x, self.m_position.m_y, self.m_position.m_room)
         
