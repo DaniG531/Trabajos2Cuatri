@@ -1,6 +1,8 @@
-for i in range(10):
-    print(i)
-    if i > 5:
-        break
-else:
-    print("a")
+class Letter:
+    def __init__(self, name = "A"):
+        self.m_name =  name
+
+
+dict = {"key": [Letter("A"), Letter("B"), Letter("C")]}
+
+print(len(dict["key"]))
