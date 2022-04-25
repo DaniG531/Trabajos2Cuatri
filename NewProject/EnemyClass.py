@@ -23,7 +23,7 @@ class Enemy:
                 self.m_inventory["Potion"].pop(0)
                 room.append(Potion(Position(self.m_position.m_x, self.m_position.m_y, self.m_position.m_room)))
         if len(self.m_inventory["Key"]) > 0:    
-            for llave in self.m_inventory["key"]:
+            for llave in self.m_inventory["Key"]:
                 self.m_inventory["Key"].pop(0)
                 room.append(Key(Position(self.m_position.m_x, self.m_position.m_y, self.m_position.m_room)))
             

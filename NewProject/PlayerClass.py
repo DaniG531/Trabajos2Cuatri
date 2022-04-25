@@ -8,7 +8,7 @@ class Player:
     def __init__(self):
         self.m_position = Position(2, 2, 0)
         self.m_health = 100
-        self.m_magic = 50
+        self.m_magic = 25
         self.m_attackOptions = [1,2,3] #1 = Rock, 2 = Paper, 3 = Scissors
         self.m_damageGiven = 25
         
@@ -18,6 +18,7 @@ class Player:
     def LookInv(self):
         print("Puntos de Vida = ", self.m_health)
         print("Puntos de Magia = ", self.m_magic)
+        print("Ataque = ", self.m_damageGiven)
         print("Llaves = ", str(len(self.m_inventory["Key"])))
         print("Pociones de Vida = ", str(len(self.m_inventory["Potion"])))
         print("Pociones de Maná = ", str(len(self.m_inventory["Mana"])))     
@@ -127,6 +128,16 @@ class Player:
             self.m_inventory["Mana"].pop(0)
             print("Pociones de Maná = ", str(len(self.m_inventory["Mana"])))
 
+    def Magic(self):
+        sure = str.lower(input("¿Quieres gastar 25 puntos de Maná para obtener un boost en fuerza? (Y/N) (S/N)= \n"))
+        if sure == "y" or sure == "yes" or sure == "yeah" or sure == "sí" or sure == "si" or sure == "s":
+            if self.m_magic <= 0:
+                print("No tienes objetos de esa clase.\n")
+                return
+            self.m_magic -= 25
+            print("Puntos de Magia = ", self.m_magic)
+            self.m_damageGiven += 6
+            print("Ataque = ", self.m_damageGiven, "\n")
 
     def Combat(self, enemies, room):    #1 = Rock, 2 = Paper, 3 = Scissors
         for enemy in enemies:
@@ -173,8 +184,13 @@ class Player:
                             if self.m_position.m_x == enemy.m_position.m_x and self.m_position.m_y == enemy.m_position.m_y:
                                 enemies.pop(enemies.index(enemy))
                 
-                    
-        
+    def Inspect(self, enemies):
+        for enemy in enemies:
+            if self.m_position.m_x == enemy.m_position.m_x and self.m_position.m_y == enemy.m_position.m_y:
+                print(f"\nNombre del enemigo = {enemy.m_name}.")
+                print(f"Vida del enemigo = {enemy.m_health}.")
+                print(f"Fuerza del enemigo = {enemy.m_damageGiven}.\n")
+
     def Move(self, Rooms, direction, enemies):
         NewPos = Position(self.m_position.m_x, self.m_position.m_y, self.m_position.m_room)
         

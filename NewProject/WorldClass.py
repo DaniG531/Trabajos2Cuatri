@@ -85,14 +85,14 @@ class World:
             ],
 
             [
-            Enemy("Guardia", Position(1,1,1), 80, 22, {"Key":[Key()],"Potion": [Potion(), Potion(), Potion(), Potion()], "Mana": [Mana()]}),
-            Enemy("Elfo Fuerte", Position(2,0,1), 50, 15, {"Key": [],  "Potion": [Potion()], "Mana": []}),
+            Enemy("Guardia", Position(1,1,1), 80, 22, {"Key":[Key()],"Potion": [Potion(), Potion(), Potion(), Potion()], "Mana": [Mana(),Mana()]}),
+            Enemy("Elfo Fuerte", Position(2,0,1), 50, 15, {"Key": [],  "Potion": [Potion(),Potion()], "Mana": []}),
             Enemy("Elfo Fuerte", Position(3,1,1), 50, 20, {"Key": [],  "Potion": [Potion(),Potion()], "Mana": []})
             ],
 
             [
-            Enemy("El Destructor", Position(5,3,2), 350, 30, {"Key":[Key()],"Potion": [Potion(), Potion(), Potion(), Potion()], "Mana": [Mana(), Mana()]}),
-            Enemy("Elfo Guerrero", Position(3,5,0), 120, 15, {"Key": [],  "Potion": [Potion()], "Mana": []}),
+            Enemy("El Destructor", Position(5,3,2), 300, 30, {"Key":[Key()],"Potion": [Potion(), Potion(), Potion(), Potion()], "Mana": [Mana(), Mana()]}),
+            Enemy("Elfo Guerrero", Position(3,5,0), 120, 23, {"Key": [],  "Potion": [Potion()], "Mana": [Mana(),Mana()]}),
             Enemy("Elfo Guerrero", Position(9,5,0), 85, 15, {"Key": [],  "Potion": [Potion()], "Mana": [Mana()]})
             
             ]
@@ -126,9 +126,15 @@ class World:
         
     def throwitem(self):
         self.m_jugador.Throw()
+        
+    def MagicBoost(self):
+        self.m_jugador.Magic()
 
     def CombatEnemy(self):
         self.m_jugador.Combat(self.m_rooms[self.m_jugador.m_position.m_room].m_enemies, self.m_rooms[self.m_jugador.m_position.m_room].m_items)
+
+    def EnemyInspect(self):
+        self.m_jugador.Inspect(self.m_rooms[self.m_jugador.m_position.m_room].m_enemies)
 
     def printStuff(self, j, i):
         if self.m_jugador.m_position.m_x == j and self.m_jugador.m_position.m_y == i:
