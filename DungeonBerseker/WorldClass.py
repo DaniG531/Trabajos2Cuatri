@@ -64,7 +64,7 @@ class World:
 
         items = [
             [
-
+                Mana(Position(0,0,0))
             ],
 
             [

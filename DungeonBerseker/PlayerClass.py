@@ -129,8 +129,8 @@ class Player:
     def Magic(self):
         sure = str.lower(input("¿Quieres gastar 25 puntos de Maná para obtener un boost en fuerza? (Y/N) (S/N)= \n"))
         if sure == "y" or sure == "yes" or sure == "yeah" or sure == "sí" or sure == "si" or sure == "s":
-            if self.m_magic <= 0:
-                print("No tienes objetos de esa clase.\n")
+            if self.m_magic <= 24:
+                print("No tienes puntos de maná.\n")
                 return
             self.m_magic -= 25
             print("Puntos de Magia = ", self.m_magic)
@@ -176,6 +176,7 @@ class Player:
                     print(f"Vida del Enemigo = {enemy.m_health}")
 
                     if enemy.m_health <= 0:
+                        enemy.m_health = 0
                         enemy.emptyInv(room)
                         print(f"El enemigo {enemy.m_name} ha muerto y ha soltado lo que llevaba encima.")
                         for enemy in enemies:
