@@ -16,7 +16,7 @@ class Player:
 
 
     def LookInv(self):
-        print("Puntos de Vida = ", self.m_health)
+        print("Puntos de Vida = ", self.m_health, " / 100")
         print("Puntos de Magia = ", self.m_magic)
         print("Ataque = ", self.m_damageGiven)
         print("Llaves = ", str(len(self.m_inventory["Key"])))
@@ -74,7 +74,7 @@ class Player:
             if len(self.m_inventory["Mana"]) <= 0:
                 print("No tienes objetos de esa clase.\n")
                 return
-            self.m_health += self.m_inventory["Mana"][0].m_restoring
+            self.m_magic += self.m_inventory["Mana"][0].m_restoring
             self.m_inventory["Mana"].pop(0)
             print("Puntos de Maná = ", self.m_magic)
             print("Pociones de Maná = ", str(len(self.m_inventory["Mana"])))
