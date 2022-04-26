@@ -76,8 +76,6 @@ class Player:
                 return
             self.m_health += self.m_inventory["Mana"][0].m_restoring
             self.m_inventory["Mana"].pop(0)
-            if self.m_health >= 50:
-                self.m_health = 50
             print("Puntos de Maná = ", self.m_magic)
             print("Pociones de Maná = ", str(len(self.m_inventory["Mana"])))
 
