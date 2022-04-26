@@ -1,4 +1,3 @@
-from operator import inv
 from KeyClass import Key
 from ManaClass import Mana
 from PotionClass import Potion
